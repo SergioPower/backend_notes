@@ -27,10 +27,9 @@ let notes = [
     important: true
   }
 ]
-app.get('/', (request, response) => { // primer parametro contiene toda la información de la solicitud,
-  // el segunto parametro de respuesta se utiliza para definir
-  // cómo se responde a la solicitud
-  response.send('<h1>Hello World!</h1>') // espera un acadena de texto
+app.get('/', (request, response) => {
+  // wait strings
+  response.send('<h1>Hello World!</h1>')
 })
 
 app.get('/api/notes', (request, response) => {
@@ -66,24 +65,24 @@ const generateId = () => {
   return maxId + 1
 }
 
+// create a new note
 app.post('/api/notes', (request, response) => {
   const body = request.body
 
-  if (!body.content) {
+  if (!body.content === undefined) {
     return response.status(400).json({
       error: 'content missing'
     })
   }
 
-  const note = {
+  const note = new Note({
     content: body.content,
-    important: Boolean(body.important) || false,
-    id: generateId()
-  }
+    important: body.important || false
+  })
 
-  notes = notes.concat(note)
-
-  response.json(note)
+  note.save().then(savedNote => {
+    response.json(savedNote)
+  })
 })
 const PORT = process.env.PORT
 app.listen(PORT, () => {
