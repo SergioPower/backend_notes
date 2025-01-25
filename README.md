@@ -1,5 +1,11 @@
 # App de Notas
 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+
 ## Descripción
 
 Esta es una aplicación web para la gestión de notas personales. Permite a los usuarios crear, editar, eliminar y visualizar notas de manera sencilla. La aplicación está construida con un backend personalizado utilizando Render y una base de datos MongoDB, mientras que el frontend está desarrollado con React y alojado en la carpeta `dist`.
